@@ -1,0 +1,260 @@
+2019-05-23 22:53:10.254 +03:00 [ERR] ERROR Handling transaction for InitializeSnakMachineCommand ({"OneCentCount":100,"TenCentCount":1000,"QuarterCount":1000,"OneDollarCount":500,"FiveDollarCount":200,"UserId":null,"$type":"InitializeSnakMachineCommand"})
+System.InvalidOperationException: The property 'LastUpdated' on entity type 'Money' could not be found. Ensure that the property exists and has been included in the model.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityTypeExtensions.GetProperty(IEntityType entityType, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry.Property(String propertyName)
+   at DddInPractice.Data.DefaultDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Data\DefaultDbContext.cs:line 44
+   at DddInPractice.Data.DefaultDbContext.SaveEntitiesAsync(CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Data\DefaultDbContext.cs:line 63
+   at DddInPractice.CommandHandlers.Handlers.InitializeSnakMachineCommandHandler.Handle(InitializeSnakMachineCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\InitializeSnakMachineCommandHandler.cs:line 29
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 22:53:34.279 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'LastUpdated' on entity type 'Money' could not be found. Ensure that the property exists and has been included in the model.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityTypeExtensions.GetProperty(IEntityType entityType, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry.Property(String propertyName)
+   at DddInPractice.Data.DefaultDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Data\DefaultDbContext.cs:line 44
+   at DddInPractice.Data.DefaultDbContext.SaveEntitiesAsync(CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Data\DefaultDbContext.cs:line 63
+   at DddInPractice.CommandHandlers.Handlers.InitializeSnakMachineCommandHandler.Handle(InitializeSnakMachineCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\InitializeSnakMachineCommandHandler.cs:line 29
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.InitializeSnakMachine(InitializeSnakMachineDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-05-23 23:33:11.146 +03:00 [ERR] ERROR Handling transaction for BuySnackCommand ({"SnackMachineId":2,"SlotPosition":0,"OneCentCount":5,"TenCentCount":0,"QuarterCount":3,"OneDollarCount":0,"FiveDollarCount":0,"UserId":null,"$type":"BuySnackCommand"})
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.GetSlot(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 118
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.CanBuySnak(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 54
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 35
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 23:33:11.712 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.GetSlot(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 118
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.CanBuySnak(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 54
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 35
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.AddSlot(Int32 id, BuySnackDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-05-23 23:34:28.105 +03:00 [ERR] ERROR Handling transaction for BuySnackCommand ({"SnackMachineId":2,"SlotPosition":0,"OneCentCount":5,"TenCentCount":0,"QuarterCount":3,"OneDollarCount":0,"FiveDollarCount":0,"UserId":null,"$type":"BuySnackCommand"})
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 23:34:28.720 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.AddSlot(Int32 id, BuySnackDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-05-23 23:34:45.007 +03:00 [ERR] ERROR Handling transaction for BuySnackCommand ({"SnackMachineId":2,"SlotPosition":0,"OneCentCount":5,"TenCentCount":0,"QuarterCount":3,"OneDollarCount":0,"FiveDollarCount":0,"UserId":null,"$type":"BuySnackCommand"})
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 23:34:45.527 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.AddSlot(Int32 id, BuySnackDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-05-23 23:35:24.824 +03:00 [ERR] ERROR Handling transaction for BuySnackCommand ({"SnackMachineId":2,"SlotPosition":0,"OneCentCount":5,"TenCentCount":0,"QuarterCount":3,"OneDollarCount":0,"FiveDollarCount":0,"UserId":null,"$type":"BuySnackCommand"})
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.GetSlot(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 118
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.CanBuySnak(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 54
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 35
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 23:35:25.340 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.GetSlot(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 118
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.CanBuySnak(Int32 position) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 54
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 35
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.AddSlot(Int32 id, BuySnackDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-05-23 23:39:34.687 +03:00 [ERR] ERROR Handling transaction for BuySnackCommand ({"SnackMachineId":2,"SlotPosition":1,"OneCentCount":5,"TenCentCount":0,"QuarterCount":3,"OneDollarCount":0,"FiveDollarCount":0,"UserId":null,"$type":"BuySnackCommand"})
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+2019-05-23 23:39:35.222 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException: Exception of type 'DddInPractice.Domain.Aggregates.SnakMachineAggregate.Exceptions.CoinOrNoteIsNotAcceptableException' was thrown.
+   at DddInPractice.Domain.Aggregates.SnakMachineAggregate.SnackMachine.InsertMoney(Money money) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Domain\Aggregates\SnakMachineAggregate\SnackMachine.cs:line 40
+   at DddInPractice.Commands.Handlers.BuySnackCommandHandler.Handle(BuySnackCommand request, CancellationToken cancellationToken) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.CommandHandlers\Handlers\BuySnackCommandHandler.cs:line 34
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.<>c__DisplayClass3_0.<<Handle>b__0>d.MoveNext() in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 48
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c.<<ExecuteAsync>b__3_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at DddInPractice.Api.Infrastructure.Behaviours.TransactionBehaviour`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\TransactionBehaviour.cs:line 41
+   at DddInPractice.Api.Infrastructure.Behaviours.ValidatorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\ValidatorBehavior.cs:line 44
+   at DddInPractice.Api.Infrastructure.Behaviours.LoggingBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Infrastructure\Behaviours\LoggingBehavior.cs:line 16
+   at DddInPractice.Api.Controllers.SnakMachineController.AddSlot(Int32 id, BuySnackDto model) in C:\Users\Bohdan\Documents\Visual Studio 2017\Projects\DddInPractice\DddInPractice.Api\Controllers\SnakMachineController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
