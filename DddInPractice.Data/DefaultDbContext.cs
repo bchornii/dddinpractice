@@ -37,6 +37,8 @@ namespace DddInPractice.Data
             modelBuilder.ApplyConfiguration(new SnakTypeEntityTypeConfiguration());
         }
 
+        // TODO: saving Owned props have some odds
+        // for details: https://msdn.microsoft.com/en-us/magazine/mt846463.aspx
         public override async Task<int> SaveChangesAsync(
             CancellationToken cancellationToken = default)
         {
